@@ -51,9 +51,6 @@
     
     {% block content %}
     
-        <div id="img_div">
-            <img src =/{{Listado_viajes_des.img}} > 
-        </div>
          <!--descripcion de un modelo de hospedaje   -->
    
     <div id="datos_div">
@@ -61,7 +58,7 @@
         <div>Destino:{{Listado_viajes_des.ciudad}}</div>
         <div>Detalles:{{Listado_viajes_des.descrpicion}}</div>
         <div>Numero de Noches:{{Listado_viajes_des.noches}}</div>
-        <a type="button" class="btn" href="{% url 'orders' Listado_viajes_des.pk %}" id="btn_comprar"><strong>Pagar: ${{Listado_viajes_des.presio}}</strong></a>
+        <a type="button" class="btn" href="{% url 'orders_hosp' Listado_viajes_des.pk %}" id="btn_comprar"><strong>Pagar: ${{Listado_viajes_des.presio}}</strong></a>
         
     </div>
     

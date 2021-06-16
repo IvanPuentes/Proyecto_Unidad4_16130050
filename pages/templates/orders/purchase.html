@@ -16,6 +16,7 @@
 <img id="img_div" src = {{Listado_viajes_des.img.url}} >
 <form action="{% url 'charge' %}" method="post">
     {% csrf_token %}
+    <input value="{{Listado_viajes_des.presio}}00" id="canitdad" name="cantidad">
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="{{ stripe_key }}"
         data-description="Acceso total"
