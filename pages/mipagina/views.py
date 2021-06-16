@@ -117,6 +117,23 @@ class ViajeDeleteView(LoginRequiredMixin,DeleteView):
      context_object_name='Autores'
      login_url = 'login'
 
+#vista de la pagina para borrar los viajes
+class VueloDeleteView(LoginRequiredMixin,DeleteView):
+     template_name = 'deleteVuelo.html'
+     model = Vuelo
+     success_url = reverse_lazy('home')
+     context_object_name='Autores'
+     login_url = 'login'
+#vista de la pagina para borrar los viajes
+class HospDeleteView(LoginRequiredMixin,DeleteView):
+     template_name = 'deleteHops.html'
+     model = Hospedaje
+     success_url = reverse_lazy('home')
+     context_object_name='Autores'
+     login_url = 'login'
+
+
+
 #vista de la pagina de la creacion de comentarios
 class ComentarioCreateView(LoginRequiredMixin,CreateView):
     model = ComentarioVuelo

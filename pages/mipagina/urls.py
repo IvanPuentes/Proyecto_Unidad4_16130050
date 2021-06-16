@@ -1,5 +1,5 @@
 from django.urls import path,include
-from .views import HomePageView,TecView,RegistrarView,CreateViajesView,CreateVuelosView,VueloPageView,CreateHospedajeView,HospedajePageView,UpdatePageView,UpdateVueloPageView,UpdateHospedajePageView,DescripViajesPageView,DescripVuelosPageView,DescripHospPageView,ViajeDeleteView,AboutPageView,ComentarioCreateView,SearchResultListview
+from .views import HomePageView,TecView,RegistrarView,CreateViajesView,CreateVuelosView,VueloPageView,CreateHospedajeView,HospedajePageView,UpdatePageView,UpdateVueloPageView,UpdateHospedajePageView,DescripViajesPageView,DescripVuelosPageView,DescripHospPageView,ViajeDeleteView,AboutPageView,ComentarioCreateView,SearchResultListview,VueloDeleteView,HospDeleteView
 from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 #importar las librerias y los archivos 
 
@@ -21,7 +21,12 @@ urlpatterns=[
     path('Descripcion/Viajes/<int:pk>',DescripViajesPageView.as_view(),name='DescViajes'),
     path('Descripcion/Vuelos/<int:pk>',DescripVuelosPageView.as_view(),name='DescVuelos'),
     path('Descripcion/Hospedaje/<int:pk>',DescripHospPageView.as_view(),name='DescHosp'),
+    
     path('Viaje/<int:pk>/delete',ViajeDeleteView.as_view(),name='deleteViaje'),
+    path('Vuelo/<int:pk>/delete',VueloDeleteView.as_view(),name='deleteVuelo'),
+    path('Hospedaje/<int:pk>/delete',HospDeleteView.as_view(),name='deleteHosp'),
+
+
     path('Tec',TecView .as_view(),name='tec'),
     path('Comentarios/<int:ViajeComent>',ComentarioCreateView.as_view(),name='comentarioNuevo'),
     path('search', SearchResultListview.as_view(), name='search_result'),
