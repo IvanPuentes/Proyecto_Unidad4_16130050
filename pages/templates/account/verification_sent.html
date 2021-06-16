@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Verifica la direccion en tu email" %}{% endblock %}
+
+{% block content %}
+<div style="text-align: center;margin-top: 100px;">
+    <h1>{% trans "Por favor verifica tu email" %}</h1>
+    <p>{% blocktrans %}Hola querido usario nosotros emos enviado un correo de verficacion a tu email <br>
+        por favor para continuar el proceso entra a el link que esta en el correo{% endblocktrans %}</p>
+</div>
+{% endblock content %}

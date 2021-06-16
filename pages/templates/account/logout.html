@@ -1,0 +1,68 @@
+<style>
+   
+    #color_mensaje{
+        color: white;
+        text-align: center;
+    }
+    #btn_guardar{
+         color:green;
+         width: 150px;
+         height: 40px;
+         margin-left: 45%;
+        
+     }
+     #color_mensaje1{
+        color: black;
+        text-align: center;
+    }
+
+    #btn_guardar1{
+         color : rgb(255, 0, 0);
+         width: 150px;
+         height: 40px;
+         margin-left: 45%;
+        
+     }
+
+
+
+</style>
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+
+{% block content %}
+
+{% if user.is_superuser%}
+    <h1 id="color_mensaje">{% trans "Sign Out" %}</h1>
+
+    <p id="color_mensaje">{% trans 'Estas seguro de que desea salir del usario actual?' %}</p>
+
+    <form method="post" action="{% url 'account_logout' %}">
+    {% csrf_token %}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+    {% endif %}
+    <button type="submit" id="btn_guardar" >{% trans 'Sign Out' %}</button>
+    </form>
+
+{% elif user.is_authenticated%}
+
+    <h1 id="color_mensaje1">{% trans "Sign Out" %}</h1>
+
+    <p id="color_mensaje1">{% trans 'Estas seguro de que desea salir del usario actual?' %}</p>
+
+    <form method="post" action="{% url 'account_logout' %}">
+    {% csrf_token %}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+    {% endif %}
+    <button type="submit" id="btn_guardar1" >{% trans 'Sign Out' %}</button>
+    </form>
+
+{% endif %}
+
+
+{% endblock %}

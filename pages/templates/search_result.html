@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Busquedas{% endblock title %}
+{% block content %}
+
+{% for vuelo in listaBook  %}
+
+    <div>
+        <h2><a href="{{vuelo.get_aboute_url}}">{{ vuelo.ciudad }}</a></h2>
+        <p>Descripcion:{{ vuelo.descrpicion}}</p>
+        <img id="home_img" src = {{vuelo.img.url}} >
+    </div>
+{% endfor %}
+{% endblock content%}
+
+
+
+
+
+
+

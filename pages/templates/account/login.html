@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="text-align: center;margin-top: 100px;">
+        <h2 id="titulo">Log In</h2>
+        <form action="" method="POST">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary" id="botonsusecc">Login</button>
+            <a type="button" class="btn btn-warning" href="{% url 'account_signup'%}">Registrar</a>
+           <div id="div_rec">
+            <a  href="{% url 'account_reset_password' %}"><br>Olvidaste tu contraseña????</a>
+			
+           </div>
+                   </form>
+                  
+    {% endblock content%}
+
+<br><br><br><br><br><br>
+
+
+
+</div>
+</body>
+</html>
+
+
